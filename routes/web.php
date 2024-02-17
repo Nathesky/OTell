@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HospedeController;
+use App\Http\Controllers\FuncionarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HospedeController::class,'showHome']);
-Route::get('/cadastro-hospede', [HospedeController::class,'showFormCadastro']);
+Route::get('/cadastro-hospede', [HospedeController::class,'showFormularioCadastroHospede']);
+Route::get('/cadastro-funcionario', [FuncionarioController::class,'showFormularioCadastroFuncionario']);

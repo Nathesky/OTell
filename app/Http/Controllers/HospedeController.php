@@ -10,7 +10,7 @@ class HospedeController extends Controller
         return view("home");
     }
 
-    public function showFormCadastro(Request $request){
+    public function showFormularioCadastroHospede(Request $request){
         return view("formularioCadastroHospede");
     }
 }

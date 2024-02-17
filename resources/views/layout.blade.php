@@ -23,7 +23,7 @@
                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Cliente
+                                Hospede
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{'/cadastro-hospede'}}">Cadastro</a></li>
@@ -41,7 +41,7 @@
                                 Funcionário
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="{{'/cadastro-funcionario'}}">Cadastro</a></li>
                                 <li><a class="dropdown-item" href="#">Pesquisar</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
