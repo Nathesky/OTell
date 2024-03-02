@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
+            $table->integer('numero');
+            $table->string('tipo');
+            $table->decimal('valor', 8, 2);
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@
 <!-- INPUT EMAIL -->
   <div class="col-md-6">
     <label for="inputFuncao" class="form-label">Função</label>
-    <input type="text" class="form-control" id="inputFuncao" placeholder="Roger@exemplo.com" name="funcao">
+    <input type="text" class="form-control" id="inputFuncao" placeholder="Mantenedor" name="funcao">
   </div>
 
 <!-- INPUT FONE -->
