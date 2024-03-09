@@ -11,10 +11,10 @@ class Reserva extends Model
     protected $fillable =[
         'idHospede',
         'idFuncionario',
-        'idQuarto',
+        'numeroQuarto',
         'situacao',
-        'valortotal',
-        'dtEntrada',
+        'valorTotal',
         'dtSaida',
+        'dtEntrada',
     ];
 }

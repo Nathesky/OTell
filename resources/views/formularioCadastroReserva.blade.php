@@ -1,6 +1,8 @@
 @extends('layout')
 @section('content')
-<section class="container mt-5">
+<section class="container mt-5"
+style="padding: 2rem">
+>
 <h1>Reserva de quarto</h1>    
 <form class="row g-3" method="POST" action="{{route('envia-banco-reserva')}}">
 @csrf
@@ -14,7 +16,7 @@
 
   <div class="col-md-6">
     <label for="inputNomeHospede" class="form-label">Nome do Hóspede</label>
-    <input type="text" readonly class="form-control" id="inputIdHospede" placeholder="Hospede da Silva">
+    <input type="text" readonly class="form-control" id="inputIdHospede" placeholder="Hospede da Silva" name="nomeHospede">
   </div>
 
 <!-- INPUT IDFUNCIONÁRIO -->
@@ -25,28 +27,28 @@
 
   <div class="col-md-6">
     <label for="inputNomeFuncionario" class="form-label">Nome do Funcionário</label>
-    <input type="text" readonly class="form-control" id="inputNomeFuncionario" placeholder="Funcionario da Silva">
+    <input type="text" readonly class="form-control" id="inputNomeFuncionario" placeholder="Funcionario da Silva" name="nomeFuncionario">
   </div>
 
 <!-- INPUT IDQUARTO -->
   <div class="col-md-3">
     <label for="inputNomeFuncionario" class="form-label">Número do Quarto</label>
-    <input type="text" class="form-control" id="inputNomeFuncionario" placeholder="Digite o número do quarto">
+    <input type="text" class="form-control" id="inputNomeFuncionario" placeholder="Digite o número do quarto" name="numeroQuarto">
   </div>
 
   <div class="col-md-3">
     <label for="inputTipoQuarto" class="form-label">Tipo de Quarto</label>
-    <input type="text" readonly class="form-control" id="inputTipoQuarto" placeholder="Classe A, B...">
+    <input type="text"  class="form-control" id="inputTipoQuarto" placeholder="Classe A, B..." name="tipoQuarto">
   </div>
 
   <div class="col-md-3">
     <label for="inputValorDiaria" class="form-label">Valor da Diária</label>
-    <input type="text" readonly class="form-control" id="inputValorDiaria" placeholder="100.00" name="valor" pattern="^\d+(\.\d{1,2})?$" title="Por favor, insira um valor válido (por exemplo, 100.00)">
+    <input type="text" readonly class="form-control" id="inputValorDiaria" placeholder="100.00" name="valorDiaria" pattern="^\d+(\.\d{1,2})?$" title="Por favor, insira um valor válido (por exemplo, 100.00)">
   </div>
 
   <div class="col-md-3">
     <label for="inputValorDiaria" class="form-label">Valor Total</label>
-    <input type="text" readonly class="form-control" id="inputValorDiaria" placeholder="100.00" name="valor" pattern="^\d+(\.\d{1,2})?$" title="Por favor, insira um valor válido (por exemplo, 100.00)">
+    <input type="text"  class="form-control" id="inputValorDiaria" placeholder="100.00" name="valorTotal" pattern="^\d+(\.\d{1,2})?$" title="Por favor, insira um valor válido (por exemplo, 100.00)">
   </div>
 
 
@@ -63,7 +65,7 @@
 <!-- INPUT DATA DE ENTRADA -->
     <div class="col-md-6">
         <label for="inputDtEntrada" class="form-label">Data de Entrada</label>
-        <input type="datetime-local" class="form-control" id="inputDtEntrada" name="dtEntrada">
+        <input type="date" class="form-control" id="inputDtEntrada" name="dtEntrada">
     </div>
 
 <!-- INPUT DATA DE SAÍDA -->

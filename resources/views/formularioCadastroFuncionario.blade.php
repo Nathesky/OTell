@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-<section class="container mt-5">
+<section class="container mt-5"
+style="padding: 2rem">
 <form class="row g-3" method="Post" action="{{route('envia-banco-funcionario')}}">
 @csrf
 

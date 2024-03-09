@@ -18,9 +18,9 @@ class QuartoController extends Controller
 
     public function cadQuarto(Request $request){
             $dadosValidos = $request -> validate([
-                'tipo' => 'string|required',
-                'numero' => 'integer|required',
-                'valor' => 'numeric|required|regex:/^\d+(\.\d{1,2})?$/'
+                'tipoQuarto' => 'string|required',
+                'numeroQuarto' => 'integer|required',
+                'valorDiaria' => 'numeric|required|regex:/^\d+(\.\d{1,2})?$/'
             ]);
         Quarto::create($dadosValidos);
         return Redirect::route('home');

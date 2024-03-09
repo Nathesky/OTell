@@ -20,11 +20,11 @@ class ReservaController extends Controller
         $dadosValidos = $request -> validate([
             'idHospede' => 'integer|required',
             'idFuncionario' => 'integer|required',
-            'idQuarto' => 'integer|required',
+            'numeroQuarto' => 'integer|required',
             'situacao' => 'required|in:pago,pendente',
-            'valortotal' => 'numeric|required|regex:/^\d+(\.\d{1,2})?$/',
-            'dtSaida' => 'required|date',
-            'dtEntrada' => 'required|date_format:Y-m-d\TH:i'
+            'valorTotal' => 'numeric|required|regex:/^\d+(\.\d{1,2})?$/',
+            'dtSaida' => 'date|required',
+            'dtEntrada' => 'date|required'
         ]);
         
         Reserva::create($dadosValidos);
