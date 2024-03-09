@@ -27,4 +27,8 @@ class FuncionarioController extends Controller
         return Redirect::route('home');
 
     } 
+
+    public function gerenciarFuncionario(){
+        return view('gerenciarFuncionario');
+    }
 }

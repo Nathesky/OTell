@@ -25,5 +25,9 @@ class HospedeController extends Controller
         Hospede::create($dadosValidos);
         return Redirect::route('home');
 
-    } 
+    }
+    
+    public function gerenciarHospede(){
+        return view('gerenciarHospede');
+    }
 }

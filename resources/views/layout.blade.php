@@ -34,12 +34,8 @@ style="background-color: #3d3d3d;
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{'/cadastro-hospede'}}">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Deletar</a></li>
-                                <li><a class="dropdown-item" href="#">Alterar</a></li>
+                                <li><a class="dropdown-item" href="{{'/gerenciar-hospede'}}">Gerenciar</a></li>
+        
                             </ul>
                         </li>
 
@@ -49,12 +45,8 @@ style="background-color: #3d3d3d;
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{'/cadastro-funcionario'}}">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                                <li><a class="dropdown-item" href="{{'/gerenciar-funcionario'}}">Gerenciar</a></li>
                                 <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Deletar</a></li>
-                                <li><a class="dropdown-item" href="#">Alterar</a></li>
                             </ul>
                         </li>
 
@@ -64,12 +56,7 @@ style="background-color: #3d3d3d;
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{'/cadastro-quarto'}}">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Deletar</a></li>
-                                <li><a class="dropdown-item" href="#">Alterar</a></li>
+                                <li><a class="dropdown-item" href="{{'/gerenciar-quarto'}}">Gerenciar</a></li>
                             </ul>
                         </li>
 
@@ -79,13 +66,7 @@ style="background-color: #3d3d3d;
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{'/cadastro-reserva'}}">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Deletar</a></li>
-                                <li><a class="dropdown-item" href="#">Alterar</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="{{'/gerenciar-reserva'}}">Gerenciar</a></li>
                         </li>
 
                     </ul>
