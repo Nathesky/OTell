@@ -2,7 +2,7 @@
 @section('content')
 <section class="container mt-5"
 style="padding: 2rem">
->
+
 <form class="row g-3" method="Post" action="{{route('envia-banco-hospede')}}">
 @csrf
 

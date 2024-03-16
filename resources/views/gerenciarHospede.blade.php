@@ -9,7 +9,7 @@
                 text-align: center;">
   <h1 style="color: #f5f5f5;">Gerenciar dados dos Hóspedes</h1>
   <div class="container m-5">
-    <form>
+    <form method='get' action ="{{route('gerenciar-hospede')}}">
       <div class="row center">
         <div class="col">
           <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do Hóspede" aria-label="First name">
@@ -26,24 +26,31 @@
         <th scope="col">Código</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
         <th scope="col">Editar</th>
         <th scope="col">Excluir</th>
       </tr>
     </thead>
     <tbody>
+      @foreach($registrosHospedes as $registroHospedeArrayLoop )
       <tr>
-        <th scope="row">01</th>
-        <td>119897-999</td>
-        <td>Samsung</td>
+        <th scope="row">{{$registroHospedeArrayLoop -> id}}</th>
+        <td>{{$registroHospedeArrayLoop -> nome}}</td>
+        <td>{{$registroHospedeArrayLoop -> email}}</td>
+        <td>{{$registroHospedeArrayLoop -> fone}}</td>
         <td>
           <a href="">
-            <button type="button" class="btn btn-primary">X</button>
+            <button type="button" class="btn btn-primary">✔️</button>
           </a>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">X</button>
-        </td>
+          <form method='POST' action="{{route('apagar-hospede, $registroHospedeArrayLoop -> id')}}">
+            @method('delete');
+            @csrf  
+            <button type="button" class="btn btn-danger">❌</button>
+      </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
 </section>

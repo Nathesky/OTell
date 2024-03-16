@@ -24,6 +24,9 @@ Route::get('/cadastro-hospede', [HospedeController::class,'showFormularioCadastr
 Route::post('/cadastro-hospede',[HospedeController::class, 'cadHospede'])->name('envia-banco-hospede');
 //Gerenciamento
 Route::get('/gerenciar-hospede', [HospedeController::class,'gerenciarHospede']) ->name('gerenciar-hospede');
+// Route::get('/gerenciar-hospede', [HospedeController::class, 'mostrarHospedeId']) -> name('-hospede');
+Route::put('/alterar-hospede/{id}', [HospedeController::class,  'alterarHospede']) -> name('alterar-hospede');
+Route::delete('/apagar-hospede/{id}', [HospedeController::class, 'destroy']) -> name('apagar-hospede');
 
 
 // ROTA FUNCIONARIO
@@ -33,14 +36,20 @@ Route::post('/cadastro-funcionario',[FuncionarioController::class, 'cadFuncionar
 Route::get('/gerenciar-funcionario', [FuncionarioController::class,'gerenciarFuncionario']) ->name('gerenciar-funcionario');
 
 
+
+
 // ROTA QUARTO
 Route::get('/cadastro-quarto', [QuartoController::class,'showFormularioCadastroQuarto']) ->name('show-formulario-cadastro-quarto');
 Route::post('/cadastro-quarto', [QuartoController::class, 'cadQuarto'])->name('envia-banco-quarto');
 //Gerenciamento
 Route::get('/gerenciar-quarto', [QuartoController::class,'gerenciarQuarto']) ->name('gerenciar-quarto');
 
+
+
 // ROTA RESERVA
 Route::get('/cadastro-reserva', [ReservaController::class,'showFormularioCadastroReserva']);
 Route::post('/cadastro-reserva', [ReservaController::class, 'cadReserva'])->name('envia-banco-reserva');
 //Gerenciamento
 Route::get('/gerenciar-reserva', [ReservaController::class,'gerenciarReserva']) ->name('gerenciar-reserva');
+
+
