@@ -37,17 +37,19 @@
         <th scope="row">{{$registroHospedeArrayLoop -> id}}</th>
         <td>{{$registroHospedeArrayLoop -> nome}}</td>
         <td>{{$registroHospedeArrayLoop -> email}}</td>
-        <td>{{$registroHospedeArrayLoop -> fone}}</td>
+        <td>{{ $registroHospedeArrayLoop->fone }}</td>
+
         <td>
-          <a href="">
+          <a href="{{route('mostrar-hospede', $registroHospedeArrayLoop -> id)}}">
             <button type="button" class="btn btn-primary">✔️</button>
           </a>
         </td>
         <td>
-          <form method='POST' action="{{route('apagar-hospede, $registroHospedeArrayLoop -> id')}}">
-            @method('delete');
+          <form method='post' action="{{route( 'apagar-hospede', $registroHospedeArrayLoop -> id)}}">
+            @method('delete')
             @csrf  
-            <button type="button" class="btn btn-danger">❌</button>
+            <button type="submit" class="btn btn-danger">❌</button>
+            </form>
       </td>
       </tr>
       @endforeach

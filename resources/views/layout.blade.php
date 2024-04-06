@@ -52,13 +52,13 @@ style="background-color: #3d3d3d;
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Quartos
+                                 Quartos
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{'/cadastro-quarto'}}">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="{{'/gerenciar-quarto'}}">Gerenciar</a></li>
-                            </ul>
-                        </li>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{'/cadastro-quarto'}}">Cadastro</a></li>
+                                    <li><a class="dropdown-item" href="{{'/gerenciar-quarto'}}">Gerenciar</a></li>
+                                </ul>
+                            </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

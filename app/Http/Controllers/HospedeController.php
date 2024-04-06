@@ -28,29 +28,26 @@ class HospedeController extends Controller
 
     }
 
+    //GERENCIAR/SELECT/ MOSTRAR UM HÓSPEDE EM ESPECÍFICO
+    public function mostrarHospedeId(Hospede $id){
+        return view('formularioAlterarHospede',['registrosHospedes' => $id]);
+    }
+
     // MOSTRAR TODOS OS HÓSPEDES
     public function gerenciarHospede(Request $request){
         $dadosHospedes = Hospede::query();
 
         $dadosHospedes -> when($request -> nome,function($query,$valor){
-        $query -> where('nome', 'like', '%'.valor.'%');
+        $query -> where('nome', 'like', '%'.$valor.'%');
         });
 
         $dadosHospedes = $dadosHospedes -> get();
         return view('gerenciarHospede',['registrosHospedes' => $dadosHospedes]);
     }
 
-        //GERENCIAR/SELECT/ MOSTRAR UM HÓSPEDE EM ESPECÍFICO
-        // public function mostrarHospedeId(Hospede $id){
-
-        //     return view('gerenciarHospede',['registrosHospedes' => $id]);
-    
-        // }
-
     // DELETAR/APAGAR
     public function destroy(Hospede $id){
         $id -> delete();
-        // Tanto faz qualquer um dos dois modos
         return Redirect::route('home');
         // return view('home');
     }

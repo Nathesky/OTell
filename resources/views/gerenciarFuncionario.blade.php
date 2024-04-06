@@ -9,7 +9,7 @@
                 text-align: center;">
   <h1 style="color: #f5f5f5;">Gerenciar dados dos Funcionários</h1>
   <div class="container m-5">
-    <form>
+    <form method='get' action ="{{route('gerenciar-funcionario')}}">
       <div class="row center">
         <div class="col">
           <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do Funcionário" aria-label="First name">
@@ -31,19 +31,25 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($registrosFuncionarios as $registroFuncionarioArrayLoop )
       <tr>
-        <th scope="row">01</th>
-        <td>119897-999</td>
-        <td>Samsung</td>
+        <th scope="row">{{$registroFuncionarioArrayLoop->id}}</th>
+        <td>{{$registroFuncionarioArrayLoop->nome}}</td>
+        <td>{{$registroFuncionarioArrayLoop->funcao}}</td>
         <td>
-          <a href="">
-            <button type="button" class="btn btn-primary">X</button>
+          <a href="{{route('mostrar-funcionario', $registroFuncionarioArrayLoop->id)}}">
+            <button type="button" class="btn btn-primary">Editar</button>
           </a>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">X</button>
+          <form method='post' action="{{route('apagar-funcionario', $registroFuncionarioArrayLoop->id)}}">
+            @method('delete')
+            @csrf  
+            <button type="submit" class="btn btn-danger">Excluir</button>
+          </form>
         </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
 </section>

@@ -24,16 +24,22 @@ Route::get('/cadastro-hospede', [HospedeController::class,'showFormularioCadastr
 Route::post('/cadastro-hospede',[HospedeController::class, 'cadHospede'])->name('envia-banco-hospede');
 //Gerenciamento
 Route::get('/gerenciar-hospede', [HospedeController::class,'gerenciarHospede']) ->name('gerenciar-hospede');
-// Route::get('/gerenciar-hospede', [HospedeController::class, 'mostrarHospedeId']) -> name('-hospede');
+Route::get('/alterar-hospede/{id}', [HospedeController::class, 'mostrarHospedeId']) -> name('mostrar-hospede');
 Route::put('/alterar-hospede/{id}', [HospedeController::class,  'alterarHospede']) -> name('alterar-hospede');
+
 Route::delete('/apagar-hospede/{id}', [HospedeController::class, 'destroy']) -> name('apagar-hospede');
 
 
+
 // ROTA FUNCIONARIO
-Route::get('/cadastro-funcionario', [FuncionarioController::class,'showFormularioCadastroFuncionario']);
+Route::get('/cadastro-funcionario', [FuncionarioController::class,'showFormularioCadastroFuncionario']) ->name('show-formulario-cadastro-funcionario');
 Route::post('/cadastro-funcionario',[FuncionarioController::class, 'cadFuncionario'])->name('envia-banco-funcionario');
 //Gerenciamento
 Route::get('/gerenciar-funcionario', [FuncionarioController::class,'gerenciarFuncionario']) ->name('gerenciar-funcionario');
+Route::get('/alterar-funcionario/{id}', [FuncionarioController::class, 'mostrarFuncionarioId']) -> name('mostrar-funcionario');
+Route::put('/alterar-funcionario/{id}', [FuncionarioController::class,  'alterarFuncionario']) -> name('alterar-funcionario');
+
+Route::delete('/apagar-funcionario/{id}', [FuncionarioController::class, 'destroy']) -> name('apagar-funcionario');
 
 
 
@@ -43,6 +49,10 @@ Route::get('/cadastro-quarto', [QuartoController::class,'showFormularioCadastroQ
 Route::post('/cadastro-quarto', [QuartoController::class, 'cadQuarto'])->name('envia-banco-quarto');
 //Gerenciamento
 Route::get('/gerenciar-quarto', [QuartoController::class,'gerenciarQuarto']) ->name('gerenciar-quarto');
+Route::get('/alterar-quarto/{id}', [QuartoController::class, 'mostrarQuartoId']) -> name('mostrar-quarto');
+Route::put('/alterar-quarto/{id}', [QuartoController::class,  'alterarQuarto']) -> name('alterar-quarto');
+
+Route::delete('/apagar-quarto/{id}', [QuartoController::class, 'destroy']) -> name('apagar-quarto');
 
 
 
