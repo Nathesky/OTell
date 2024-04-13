@@ -1,22 +1,25 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HospedeController;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\QuartoController;
 use App\Http\Controllers\ReservaController; 
-use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-Route::get('/', [HospedeController::class,'showHome']) ->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HospedeController::class,'showHome']) ->name('home');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
 
 // ROTA HÓSPEDE
 //Cadastro
@@ -42,8 +45,6 @@ Route::put('/alterar-funcionario/{id}', [FuncionarioController::class,  'alterar
 Route::delete('/apagar-funcionario/{id}', [FuncionarioController::class, 'destroy']) -> name('apagar-funcionario');
 
 
-
-
 // ROTA QUARTO
 Route::get('/cadastro-quarto', [QuartoController::class,'showFormularioCadastroQuarto']) ->name('show-formulario-cadastro-quarto');
 Route::post('/cadastro-quarto', [QuartoController::class, 'cadQuarto'])->name('envia-banco-quarto');
@@ -61,5 +62,3 @@ Route::get('/cadastro-reserva', [ReservaController::class,'showFormularioCadastr
 Route::post('/cadastro-reserva', [ReservaController::class, 'cadReserva'])->name('envia-banco-reserva');
 //Gerenciamento
 Route::get('/gerenciar-reserva', [ReservaController::class,'gerenciarReserva']) ->name('gerenciar-reserva');
-
-
